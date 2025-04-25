@@ -5,11 +5,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    const apiUrl = `https://igfollowerapi.vercel.app/api/followers?user=${user}`;
-    const response = await fetch(apiUrl);
+    const response = await fetch(`https://insta-followers-counter.glitch.me/followers/${user}`);
     const data = await response.json();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch followers (proxy)' });
+    res.status(500).json({ error: 'Failed to fetch followers (proxy2)' });
   }
 }
